@@ -22,10 +22,10 @@ export class WrapperBotComponent implements OnInit {
 
   ngOnInit() {
     const w = window;
-    const ic = w.Intercom;
+    const ic = w['Intercom'];
     if (typeof ic === 'function') {
       ic('reattach_activator');
-      ic('update', intercomSettings);
+      ic('update', 'intercomSettings');
     } else {
       const d = document;
       const i = () => {
